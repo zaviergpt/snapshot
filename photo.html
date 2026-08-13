@@ -131,7 +131,7 @@
         document.addEventListener("DOMContentLoaded", async () => {
             if (window.location.search.length > 0) {
                 params = new URLSearchParams(window.location.search);
-                metadata = (await (await fetch("./media/photos/metadata.json")).json())[params.get("id") + ".jpg"]
+                metadata = (await (await fetch("https://www.zcyx.org/snapshot/media/photos/metadata.json")).json())[params.get("id") + ".jpg"]
                 if (window.self != window.top) {
                     let photo = document.getElementById("photo");
                     let collection = document.getElementById("collection");
