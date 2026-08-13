@@ -6,7 +6,7 @@ function getPhoto(id) {
     overlay.style.display = "block";
 }
 document.addEventListener("DOMContentLoaded", async (event) => {
-    let metadata = await (await fetch("https://zaviergpt.github.io/snapshot/media/photos/metadata.json")).json();
+    let metadata = await (await fetch("https://www.zcyx.org/snapshot/media/photos/metadata.json")).json();
     let filter = document.getElementById("filter").querySelectorAll("button");
     let input = document.getElementById("search-input");
     let params = new URLSearchParams(window.location.search);
