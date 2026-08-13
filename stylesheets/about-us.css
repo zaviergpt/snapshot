@@ -1,0 +1,331 @@
+#about-page {
+    width: 100%;
+    color: white;
+}
+#about-hero {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+}
+#about-hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+#about-hero p {
+    width: 700px;
+    max-width: 90%;
+    line-height: 1.8;
+    text-align: center;
+    margin: 0px auto;
+    font-size: 1.375rem;
+}
+#about-hero p span {
+    font-weight: 600;
+    font-style: normal;
+    font-family: "Covered By Your Grace", cursive;
+    letter-spacing: calc(1.375rem/30 * 1.5);
+    color: #FFB6C1;
+    font-size: 1.375rem;
+    padding: 0px calc(1.375rem/(30/4));
+    text-transform: uppercase;
+}
+#about-story {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#about-story div {
+    margin: 3.75rem;
+}
+#about-story {
+    width: 75%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 17.5px;
+    align-items: center;
+}
+#about-image img {
+    width: 100%;
+    object-fit: cover;
+    border: 0.125em solid #FFB6C1;
+    border-radius: 1em;
+    animation: floating 5s infinite ease-in-out;
+}
+#about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+#about-text p {
+    line-height: 1.9;
+    margin-bottom: 20px;
+    font-size: 1.125rem;
+}
+#about-text p span {
+    font-weight: 600;
+    font-style: normal;
+    font-family: "Covered By Your Grace", cursive;
+    letter-spacing: calc(1.125rem/30 * 1.5);
+    color: #FFB6C1;
+    font-size: 1.125rem;
+    padding: 0px calc(1.125rem/(30/4));
+    text-transform: uppercase;
+}
+#stats {
+    width: 85%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 70px 0;
+}
+.stat-card {
+    background: #181818;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    transition: .3s;
+}
+.stat-card:hover {
+    transform: translateY(-10px) rotateZ(-3.75deg) scale(1.05);
+    border: 0.125em solid #FFB6C1;
+    border-radius: 1em;
+    box-shadow: 0px 0px 1em #de82907e;
+}
+.stat-card h2 {
+    font-size: 3rem;
+}
+.stat-card p {
+    color: #999;
+}
+#events {
+    width: 85%;
+    margin: auto;
+    padding: 100px 0;
+}
+#events h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+#events table {
+    width: 65vw;
+    border-spacing: 0.75rem;
+    margin: 0px auto;
+    font-size: 1.125rem;
+}
+#events table tr th {
+    font-style: normal;
+    font-family: "Covered By Your Grace", cursive;
+    letter-spacing: calc(1.125rem/30 * 1.5);
+    color: #AAAAAA;
+    font-size: 1.125rem;
+    padding: 0px calc(1.125rem/(30/4));
+    text-transform: uppercase;
+}
+#events table tr td, #events table tr th, #events table tr {
+    background-color: #111111;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    margin: 1rem;
+}
+#events table tr.active th, #events table tr.active td {
+    background-color: #FFB6C1;
+    color: #111111;
+}
+#events table tr.active td h3 {
+    color: #111111;
+}
+#quote-section {
+    padding: 60px 20px;
+    text-align: center;
+    font-size: calc(2.3rem/2);
+}
+#quote-section h2 {
+    font-size: 2.3rem;
+    font-weight: 300;
+    width: 75%;
+    margin: 0px auto;
+    margin-bottom: calc(2.3rem/4);
+}
+#photo-carousel {
+    width: 100%;
+    padding: 80px 5%;
+    background: #000;
+    color: #fff;
+    box-sizing: border-box;
+}
+#carousel-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+#carousel-header h2 {
+    font-size: 42px;
+    margin: 0 0 10px;
+    font-weight: 700;
+}
+#carousel-header p {
+    font-size: 16px;
+    margin: 0;
+}
+#carousel-wrapper {
+    position: relative;
+    max-width: 1400px;
+    margin: auto;
+}
+#carousel-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 10px 0 20px;
+    scrollbar-width: none;
+}
+#carousel-track::-webkit-scrollbar {
+    display: none;
+}
+.carousel-slide {
+    flex: 0 0 380px;
+    height: 500px;
+    border-radius: 18px;
+    overflow: hidden;
+    scroll-snap-align: center;
+    background: #111;
+}
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.carousel-slide:hover img {
+    transform: scale(1.05);
+}
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+
+    font-size: 22px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s ease;
+}
+.carousel-btn:hover {
+    background: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+.prev {
+    left: -25px;
+}
+.next {
+    right: -25px;
+}
+@keyframes floating {
+    0% {
+        transform: scale(1);
+        box-shadow: 0px 0px 1em #de82907e;
+    } 50% {
+        transform: scale(1.0125);
+        box-shadow: 0px 0px 2em #de82907e;
+    } 100% {
+        transform: scale(1);
+        box-shadow: 0px 0px 1em #de82907e;
+    }
+}
+@keyframes content {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+@media (max-width: 850px) {
+    #about-story {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    #about-story div {
+        margin: 2.75rem;
+    }
+    #about-hero p {
+        font-size: 1.125em;
+    }
+    #about-hero p span {
+        letter-spacing: calc(1.125rem/30 * 1.5);
+        font-size: 1.125rem;
+        padding: 0px calc(1.125rem/(30/4));
+    }
+    #about-hero h1 {
+        font-size: 2.2rem;
+    }
+    #about-text h2,
+    #events h2 {
+        font-size: 2rem;
+    }
+    #stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #events {
+        width: calc(100% - 1em);
+        margin: auto;
+        padding: 100px 0;
+    }
+    #events table {
+        width: 100%;
+        border-spacing: 0.5rem;
+        font-size: 1rem;
+    }
+    #events table tr th {
+        letter-spacing: calc(1rem/30 * 1.5);
+        font-size: 1rem;
+        padding: 0px calc(1rem/(30/4));
+    }
+    #events table tr td, #events table tr th, #events table tr {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    #events table tr td h3 {
+        font-size: 1.5rem;
+    }
+    #quote-section {
+        padding: 30px 0px;
+    }
+    .carousel-slide {
+        flex: 0 0 280px;
+        height: 400px;
+    }
+    .carousel-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+    .prev {
+        left: 5px;
+    }
+    .next {
+        right: 5px;
+    }
+}

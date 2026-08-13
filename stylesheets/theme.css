@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    user-select: none;
+    transition: all 0.25s;
+}
+html, body {
+    font-size: 1em;
+    letter-spacing: calc(1em/40);
+    font-family: "Schoolbell", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #FFFFFF;
+    background-color: #000000;
+    overflow-x: clip; /* Debugging with Google search AI overview */
+    text-transform: lowercase;
+    scroll-behavior: smooth;
+}
+section {
+    margin: 7.5em 0px;
+}
+section h1.heading {
+    margin: calc(2.25em/4);
+    color: #FFB6C1;
+    font-size: 2.25em;
+    line-height: calc(2.25em/2);
+    letter-spacing: calc(2.25em/40);
+    font-family: "Covered By Your Grace", cursive;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    text-align: center;
+}
+section h2 {
+    color: #FFB6C1;
+    font-size: calc(2.25em/1.1);
+    line-height: calc(2.25em/1.1/2);
+    letter-spacing: calc(2.25em/1.1/40);
+    font-family: "Covered By Your Grace", cursive;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    text-align: center;
+}
+section h3 {
+    color: #FFB6C1;
+    font-size: calc(2.25em/1.3);
+    line-height: calc(2.25em/1.3/2);
+    letter-spacing: calc(2.25em/1.3/40);
+    font-family: "Covered By Your Grace", cursive;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+}
+nav#navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #FFFFFF;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent); /* 0.6 */
+    z-index: 10000;
+    height: calc((2em + 2.25em) * 1.1)
+}
+nav#navigation div {
+    position: relative;
+    width: calc(100% - 2em);
+    height: calc(100% - 2em);
+    margin: 1em;
+}
+nav#navigation div ul {
+    font-size: 1.25em;
+    letter-spacing: calc(1.25em/40);
+    line-height: 1em;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    justify-content: left;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+}
+nav#navigation div ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    display: block;
+    padding: 0.25em 0.75em;
+    border-radius: calc(1em/2);
+    border: 0.125em solid transparent;
+}
+nav#navigation div ul li a.active {
+    font-weight: 600;
+    border: 0.125em solid #FFFFFF;
+}
+nav#navigation div h1.logo {
+    font-size: 2.25em;
+    font-family: "Covered By Your Grace", cursive;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    line-height: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+nav#navigation div a[href="./contact-us.html"] {
+    background-color: #FFFFFF;
+    color: #000000;
+    font-weight: 600;
+    display: block;
+    text-decoration: none;
+    padding: 0.25em 0.75em;
+    border: 0.125em solid #FFFFFF;
+    border-radius: calc(1em/2);
+    font-size: 1.25em;
+    letter-spacing: calc(1.25em/40);
+    line-height: 1em;
+}
+nav#navigation div a:not(ul li a)[href="./contact-us.html"] {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+}
+nav#navigation div ul li a[href="./contact-us.html"] {
+    display: none;
+}
+nav#navigation button#navigation-toggle {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    height: calc((2em + 2.25em)/1.25);
+    aspect-ratio: 1;
+    display: none;
+    background-color: transparent;
+}
+nav#navigation button#navigation-toggle img {
+    filter: invert(1);
+    width: 87.5%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+footer {
+    padding: calc(1.25em * 2);
+    background-color: #000000;
+}
+footer table {
+    color: #FFFFFF;
+    border-collapse: collapse;
+    text-align: left;
+}
+footer table tr th, footer table tr td {
+    width: 25vw;
+}
+footer table tr th {
+    color: #FFB6C1;
+    font-family: "Covered By Your Grace", cursive;
+    font-weight: 600;
+    font-size: calc(1.25em * 1.25);
+    letter-spacing: calc((1.25em * 1.25)/40);
+    font-style: normal;
+    text-transform: uppercase;
+    line-height: 1em;
+    padding: calc((1.25em * 1.25)/4) 0px;
+}
+footer table tr td a {
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: lowercase;
+    font-size: 1.25em;
+    letter-spacing: calc(1.25em/40);
+    padding: calc(1.25em/8) 0px;
+    font-weight: 400;
+    display: block;
+}
+@media (max-width: 850px) {
+    nav#navigation:has(div ul.active) {
+        background-image: linear-gradient(to bottom, #000000, transparent);
+        height: calc(0.375em + (2em + 2.25em) * 1.1 + 1em + ((1.25em + (0.125em + 0.375em) * 2) * 4) + 1em);
+    }
+    nav#navigation:not(:has(div ul li a[href="./contact-us.html"])):has(div ul.active) {
+        height: calc(0.375em + (2em + 2.25em) * 1.1 + 1em + ((1.25em + (0.125em + 0.375em) * 2) * 3) + 1em);
+    }
+    nav#navigation div ul {
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
+        top: calc(0.375em + (2em + 2.25em) * 1.1 + 1em + 1em);
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+    nav#navigation:not(:has(div ul li a[href="./contact-us.html"])) div ul {
+        top: calc(0.375em + (2em + 2.25em) * 1.1 + 1em);
+    }
+    nav#navigation div ul:not(.active) {
+        display: none;
+    }
+    nav#navigation div ul li {
+        width: 100%;
+    }
+    nav#navigation div ul li a {
+        width: calc(100% - 0.75em * 2 - 0.125em * 2);
+        padding: 0.375em 0.75em;
+    }
+    nav#navigation div a[href="./contact-us.html"] {
+        display: none;
+    }
+    nav#navigation div ul li a[href="./contact-us.html"] {
+        display: block;
+        width: calc(100% - 0.75em * 2 - 0.125em * 2);
+        padding: 0.375em 0.75em;
+        font-size: 1em;
+        letter-spacing: calc(1em/40);
+        line-height: 1em;
+        margin-top: 0.25em;
+    }
+    nav#navigation div button#navigation-toggle {
+        top: 1.75em;
+        display: block;
+    }
+    nav#navigation div h1.logo {
+        top: 0.675em;
+    }
+    footer table tr th, footer table tr td {
+        width: 50vw;
+    }
+}

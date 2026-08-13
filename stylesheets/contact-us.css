@@ -1,0 +1,91 @@
+.contact-form {
+    width: min(100%, 500px);
+    padding: 50px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.contact-form h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 50px;
+    padding: 25px;
+    font-family: "Covered By Your Grace", cursive;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    color: #FFB6C1;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    border: 0.1rem solid #DDDDDD;
+    transition: 0.3s ease-in-out;
+    box-sizing: border-box;
+    background-color: #111111;
+    color: white;
+    font-family: "Schoolbell", cursive;
+}
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #FFB6C1;
+}
+.contact-form button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #FFB6C1;
+    border: 1.5px solid black;
+    cursor: pointer;
+    font-family: "Schoolbell", cursive;
+}
+.contact-form button:hover {
+    background-color: #111111;
+    border: 1.5px solid #FFB6C1;
+    color: white;
+    transform: scale(1.01);
+}
+.contact-form .row {
+    display: flex;
+    gap: 10px;
+}
+.contact-form div:not(.row) {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 90px);
+    padding: 2rem 1rem;
+}
+.contact-us {
+    border-radius: 25px;
+}
+@media (max-width: 850px) {
+    .contact-form {
+        width: min(100%, 480px);
+        padding: 1rem;
+    }
+    .contact-form h1 {
+        font-size: 2.25rem;
+        padding: 0 0 0.5rem;
+    }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        font-size: 0.95rem;
+        padding: 0.85rem;
+    }
+}

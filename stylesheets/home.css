@@ -1,0 +1,580 @@
+section#landing {
+    margin: 0px 0px;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+    opacity: 0;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0625), #000000), url("/media/photos/754921e9.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: landing linear;
+    animation-range: contain;
+    animation-timeline: view() /* https://www.joshwcomeau.com/animation/scroll-driven-animations/ */
+}
+section#landing div.content { /* Debugging with Gemini and Google learnt that the parent container matters for animations and overflow */
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+section#landing div.content h1.logo {
+    font-size: 3em;
+    font-family: "Covered By Your Grace", cursive;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+}
+section#landing div.content p.description {
+    font-size: 1.25em;
+    margin-left: 1.25em;
+}
+section#landing div#landing-logotagline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+section#landing div a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0px auto;
+    padding: 0.25em 0.75em;
+    border: 0.125em solid #FFFFFF;
+    border-radius: calc(1em/2);
+}
+section#landing div a:hover {
+    background-color: #FFB6C1;
+    border: 0.125em solid #FFB6C1;
+    color: #FFFFFF;
+}
+section#landing div a:hover img {
+    filter: invert(1)
+}
+section#landing div a img {
+    height: 1em;
+    aspect-ratio: 1;
+    object-fit: cover;
+    margin-left: 0.5em;
+}
+section#carousel {
+    margin-top: 0;
+    animation: carousel linear;
+    animation-range: entry exit;
+    animation-timeline: view();
+    opacity: 0;
+}
+section#carousel div.content {
+    position: relative;
+    height: calc(1em + 0.5em + ((100vw/3 - (0.25em * 2))/3 * 4) + 0.5em + 1em);
+}
+section#carousel div.content div#collections {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: calc(1em + 0.5em + 0.5em);
+    left: 0.5em;
+    right: 0.5em;
+}
+section#carousel div.content div#collections a {
+    display: inline-block;
+    width: calc(100vw/3 - ((0.5em - 0.125em) * 2));
+    border: 0.125em solid transparent;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    position: relative;
+    margin: 0px 0.5em;
+    border-radius: 1em;
+}
+section#carousel div.content div#collections a div.info {
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2em;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.75))
+}
+section#carousel div.content div#collections a div.info img {
+    height: calc((1em + (1em/4) + 2em)/1.25);
+    width: calc((1em + (1em/4) + 2em)/1.25);
+    margin-left: calc(((1em + (1em/4) + 2em)/1.25)/2);
+    aspect-ratio: 1;
+    object-fit: contain;
+    filter: invert(1);
+    margin-top: auto;
+}
+section#carousel div.content div#collections a div.info div {
+    width: 100%;
+}
+section#carousel div.content div#collections a div.info div span {
+    font-size: 1em;
+    line-height: 1em;
+    margin-bottom: calc(1em/4);
+    display: block;
+    font-family: "Schoolbell", cursive;
+    color: #FFFFFF;
+}
+section#carousel div.content div#collections a div.info div h1 {
+    font-size: 2em;
+    line-height: calc(2em/2);
+    color: #FFB6C1;
+    letter-spacing: calc(2em/40);
+    font-family: "Covered By Your Grace", cursive;
+    text-transform: uppercase;
+}
+section#carousel div.content div#collections a:hover div.info {
+    opacity: 1;
+}
+section#carousel div.content div#collections a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+section#carousel div.content div#collections a:hover {
+    border: 0.125em solid #FFB6C1;
+    transform: scale(1.0125);
+    box-shadow: 0px 0px 2em #de82907e;
+}
+section#carousel div.content p {
+    position: absolute;
+    display: block;
+    height: 1.125em;
+    white-space: nowrap;
+    font-family: monospace;
+    font-size: 1.125em;
+}
+section#carousel div.content:has(div#collections a.forest-photography:hover) p span.forest-photography, section#carousel div.content:has(div#collections a.city-photography:hover) p span.city-photography, section#carousel div.content:has(div#collections a.car-photography:hover) p span.car-photography {
+    color: #FFB6C1;
+}
+section#carousel div.content p#carousel-top {
+    top: 0;
+    animation:
+    carousel-content-1 linear;
+    animation-range: entry -100vh exit 100vh;
+    animation-timeline: view();
+}
+section#carousel div.content p#carousel-bottom {
+    top: calc(1em + 0.5em + ((100vw/3 - (0.25em * 2))/3 * 4));
+    animation: carousel-content-2 linear;
+    animation-range: entry -100vh exit 100vh;
+    animation-timeline: view();
+}
+section#manifesto {
+    position: relative;
+    width: 100vw;
+    aspect-ratio: 3/4;
+    animation: manifesto linear;
+    animation-range: contain;
+    animation-timeline: view();
+    opacity: 0;
+    padding-top: 7.5em;
+}
+section#manifesto div.content {
+    position: sticky;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 50%;
+}
+section#manifesto div.content p {
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+section#manifesto div.content p span {
+    font-family: "Covered By Your Grace", cursive;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: calc(1.5em/30);
+    color: #FFB6C1;
+    font-size: 1.5em;
+    padding: 0px calc(1.5em/(30/4))
+}
+section#members {
+    animation: members linear;
+    animation-range: entry exit;
+    animation-timeline: view();
+}
+section#members ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+}
+section#members ul li {
+    margin: 0px 0.5em;
+}
+section#members ul li div.image {
+    display: inline-block;
+    position: relative;
+    width: 325px;
+    aspect-ratio: 3/4;
+    background-size: cover;
+    background-position: top;
+    border-radius: 1em;
+}
+section#members ul li div.image div.stamp {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    width: 5em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    animation: members-stamp ease-in;
+    animation-range: contain -25% contain 12.5%;
+    animation-timeline: view();
+    transform: rotate(-11.25deg);
+}
+section#members ul li div.image div.stamp img {
+    width: 80%;
+    height: 80%;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+section#members ul li div.image div.stamp:has(img[src="./media/members/me.svg"]) {
+    background-color: #252525;
+}
+section#members ul li div.image div.stamp:has(img[src="./media/members/dnrstudios.png"]) {
+    background-color: #000000;
+}
+section#members ul li div.info {
+    animation: members-info ease-in;
+    animation-range: contain -12.5% contain 12.5%;
+    animation-timeline: view();
+    margin-top: 0.5em;
+}
+section#members ul li div.info h1 {
+    font-family: "Covered By Your Grace", cursive;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: calc(2em/30);
+    color: #FFB6C1;
+    font-size: 2em;
+    line-height: calc(2em/2)
+}
+section#members ul li div.info span {
+    font-size: 1em;
+    line-height: 1em;
+    margin-bottom: calc(1em/4);
+    display: block;
+    font-family: "Schoolbell", cursive;
+    color: #FFFFFF;
+    text-transform: lowercase;
+}
+section#join-us {
+    border-top: 0.125em solid #FFB6C1;
+    border-bottom: 0.125em solid #FFB6C1;
+    margin-bottom: 0;
+    padding: calc((7.5em/2 - 0.125em)/2) 0px;
+    text-align: center;
+}
+section#join-us div.content {
+    padding: calc((7.5em/2 - 0.125em)/2) 0px;
+}
+section#join-us div.content h1.heading {
+    margin-top: 0;
+    color: #FFB6C1;
+}
+section#join-us div.content p {
+    font-size: 1.375em;
+    line-height: calc(1.375em/1.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 75vw;
+    max-width: calc(1920px/3);
+    margin: 0px auto;
+    margin-bottom: 1.375em;
+}
+section#join-us div.content p span {
+    font-family: "Covered By Your Grace", cursive;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: calc(1.375em/30);
+    line-height: calc(1.375em/1.25);
+    font-size: 1.375em;
+    padding: 0px calc(1.375em/(30/4));
+    color: #FFB6C1;
+}
+section#join-us div.content#join-us-contact a {
+    font-family: "Covered By Your Grace", cursive;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: calc(1.5em/30);
+    line-height: 1.5em;
+    font-size: 1.5em;
+    padding: calc(1.5em/4) calc(1.5em/1.5);
+    background-color: #FFB6C1;
+    color: #000000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 1em;
+}
+section#join-us div.content#join-us-contact a img {
+    width: 1.5em;
+    height: 1.5em;
+    object-fit: cover;
+    margin-left: calc(1.5em/3)
+}
+section#join-us div.content#join-us-events a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0px auto;
+    padding: 0.25em 0.75em;
+    border: 0.125em solid #FFFFFF;
+    border-radius: calc(1em/2);
+    margin-left: 1em;
+}
+section#join-us div.content#join-us-events a img {
+    height: 1em;
+    aspect-ratio: 1;
+    object-fit: cover;
+    margin-left: 0.5em;
+}
+section#join-us div.content#join-us-events h3.heading {
+    margin: calc(2.25em/1.3/4);
+}
+section#join-us div.content#join-us-events div#event {
+    background-color: #111111;
+    display: inline-block;
+    margin: 0 auto;
+    width: 15em;
+    text-align: left;
+    padding: 1em 1.25em;
+    border-radius: 1em;
+}
+section#join-us div.content#join-us-events div#event h1 {
+    color: #FFB6C1;
+    font-size: 1.25em;
+    line-height: calc(1.25em/1.5);
+    letter-spacing: calc(1.25em/40);
+    font-family: "Covered By Your Grace", cursive;
+    text-transform: uppercase;
+    margin-bottom: calc(1.25em/3)
+}
+section#join-us div.content#join-us-events div#event p {
+    font-size: 1em;
+    margin: 0;
+    width: 100%;
+}
+div.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes landing {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+@keyframes carousel {
+    from {
+        opacity: 0;
+    } 30% {
+        opacity: 1;
+    } 70% {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+@keyframes manifesto {
+    from {
+        opacity: 0;
+    } 40% {
+        opacity: 1;
+    } 60% {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+@keyframes manifesto-content {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+@keyframes carousel-content-1 {
+    from {
+        left: 0em;
+    } to {
+        left: -30em;
+    }
+}
+@keyframes carousel-content-2 {
+    from {
+        left: -30em;
+    } to {
+        left: 0em;
+    }
+}
+@keyframes members {
+    from {
+        opacity: 0;
+    } 50% {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+@keyframes members-stamp {
+    from {
+        opacity: 0;
+        transform: scale(3) rotate(-11.25deg);
+    } to {
+        opacity: 1;
+        transform: scale(1) rotate(-11.25deg);
+    }
+}
+@keyframes members-info {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+@media screen and (max-width: 850px) {
+    section#landing {
+        aspect-ratio: 1/4;
+    }
+    section#landing div#landing-logotagline {
+        display: block;
+    }
+    section#landing div#landing-logotagline h1.logo {
+        font-size: 2.675em;
+        line-height: calc(2.675em/2);
+    }
+    section#landing div#landing-logotagline p.description {
+        margin: 0;
+        margin-bottom: 1.25em;
+        font-size: 1.25em;
+        line-height: calc(1.25em/2);
+    }
+    section#carousel div.content {
+        position: relative;
+        height: calc(1em + 1em + (((100vw - ((2em + 0.25em) * 2))/3 * 4) + 2em) * 3 + 1em + 1em + 1em + 0.5em);
+    }
+    section#carousel div.content div#collections {
+        flex-wrap: wrap;
+        left: 2em;
+        right: 2em;
+        top: calc(1em + 2em);
+    }
+    section#carousel div.content div#collections a {
+        margin: 0;
+        width: calc(100% - ((0.125em) * 2));
+        margin-bottom: 2em;
+    }
+    section#carousel div.content p#carousel-bottom {
+        top: calc(1em + 1em + (((100vw - ((2em + 0.25em) * 2))/3 * 4) + 2em) * 3 + 1em + 1em);
+    }
+    section#carousel div.content div#collections a {
+        border: 0.125em solid #FFB6C1;
+        transform: scale(1.0125);
+        box-shadow: 0px 0px 1em #de82907e;
+    }
+    section#carousel div.content div#collections a div.info {
+        opacity: 1;
+    }
+    section#manifesto {
+        aspect-ratio: 1/9;
+    }
+    section#manifesto div.content {
+        left: calc((100% - 75%)/2);
+        right: calc((100% - 75%)/2);
+        width: 75%;
+        transform: translate(0, -50%);
+    }
+    section#manifesto div.content p {
+        font-size: 1.25em;
+    }
+    section#manifesto div.content p span {
+        font-size: 1.25em;
+        margin: calc(1.25em/4) 0px;
+    }
+    section#members ul {
+        flex-wrap: wrap;
+    }
+    section#members ul li {
+        width: calc(100% - 4em);
+        margin: 1em 0px;
+    }
+    section#members ul li div.image {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        aspect-ratio: 3/4;
+        background-size: cover;
+        background-position: top;
+        border-radius: 1em;
+    }
+    section#join-us p {
+        font-size: 1.3em;
+        line-height: calc(1.3em * 1.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: 0px auto;
+        margin-bottom: 1.3em;
+    }
+    section#join-us p span {
+        font-family: "Covered By Your Grace", cursive;
+        font-weight: 600;
+        font-style: normal;
+        text-transform: uppercase;
+        letter-spacing: calc(1.3em/30);
+        line-height: calc(1.3em/1.125);
+        font-size: 1.3em;
+        padding: 0px calc(1.3em/(30/4));
+        color: #FFB6C1;
+    }
+    section#join-us div.content#join-us-events a {
+        margin: 0;
+        margin-top: 1em;
+    }
+}

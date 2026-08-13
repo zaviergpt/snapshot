@@ -1,0 +1,367 @@
+section#featured, section#showcase {
+    margin: 0;
+}
+section#featured {
+    aspect-ratio: 5/2;
+    display: block;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0625), #000000), url("/media/photos/754921e9.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+section#featured div {
+    position: absolute;
+    bottom: 2em;
+    left: 2em;
+}
+section#featured div span {
+    text-transform: lowercase;
+    font-size: 1em;
+    letter-spacing: calc(1em/40);
+    color: #FFFFFF;
+}
+section#featured div h1 {
+    color: #FFB6C1;
+    font-size: 2.25em;
+    line-height: calc(2.25em/2);
+    letter-spacing: calc(2.25em/40);
+    font-family: "Covered By Your Grace", cursive;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    text-align: center;
+}
+section#showcase h1.heading {
+    margin: 1em 0px;
+}
+section#showcase nav#filter {
+    position: sticky;
+    top: 4.5em;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2em 0px;
+    z-index: 1000;
+}
+section#showcase nav#filter ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(1em);
+    width: calc(50% - (1em * 2));
+    padding: 0px 1em;
+    border-radius: 1em;
+    background-color: rgba(0, 0, 0, 0.375);
+    box-shadow: 0px 0px 1em rgba(0, 0, 0, 0.375);
+    overflow: hidden;
+}
+section#showcase nav#filter ul li {
+    width: calc(100%/3);
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section#showcase nav#filter ul li button {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.25em;
+    letter-spacing: calc(1.25em/40);
+    line-height: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(1.25em * 2.25);
+    background-color: transparent;
+    font-family: "Schoolbell", cursive;
+    width: 100%;
+    text-align: center;
+    text-transform: lowercase;
+}
+section#showcase div:has(form) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section#showcase div form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(37.5% - 0.5em - 1.25em);
+    margin: 0px auto;
+    background-color: #111111;
+    padding: 0.5em;
+    padding-left: 1.25em;
+    font-size: 1.25em;
+    border-radius: 2em;
+    border: 0.1em solid transparent;
+    letter-spacing: calc(1.25em/40);
+}
+section#showcase div form input[type="text"] {
+    background-color: transparent;
+    width: 100%;
+    font-size: 1.125em;
+    letter-spacing: calc(1.125em/40);
+    font-weight: 500;
+    color: #FFFFFF;
+    font-family: "Schoolbell", cursive;
+}
+section#showcase div form:hover, section#showcase div form:has(input[type="text"]:focus) {
+    box-shadow: 0px 0px 2em #de82907e;
+    border: 0.1em solid #FFB6C1;
+}
+section#showcase div form button {
+    background-color: #FFB6C1;
+    color: #000000;
+    height: calc(2em * 1.5);
+    aspect-ratio: 1;
+    border-radius: 2em;
+    font-family: "Covered By Your Grace", cursive;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section#showcase div form button img {
+    height: 50%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+section#showcase nav#filter ul li:has(button.active) {
+    background-image: linear-gradient(to bottom, transparent 95%, #FFB6C1 5%);
+}
+section#showcase nav#filter ul li:hover:has(button:not(.active)) {
+    background-image: linear-gradient(to bottom, transparent 95%, #de82907e 5%);
+    cursor: pointer;
+}
+section#showcase nav#filter ul li button.active {
+    font-family: "Covered By Your Grace", cursive;
+    font-weight: 600;
+    font-size: 1.25em;
+    letter-spacing: calc(1.25em/40);
+    line-height: 1em;
+    text-transform: uppercase;
+    color: #FFB6C1;
+}
+section#showcase ul#results {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75vw;
+    margin: 0px auto;
+    list-style-type: none;
+}
+section#showcase ul#results li.category div.scrollable ul.photos {
+    display: flex;
+    width: 100%;
+}
+section#showcase ul#results li.category div.scrollable {
+    overflow-x: auto;
+    width: 75vw;
+}
+section#showcase ul#results li.photo {
+    display: inline-block;
+    width: calc(100%/3 - 1em);
+    margin: calc(0.5em - 0.125em);
+    border-radius: 1em;
+    overflow: hidden;
+    border: 0.125em solid #000000;
+}
+section#showcase ul#results li.category div.scrollable ul.photos li.photo {
+    min-width: calc(100%/3.25 - 1em);
+    width: 100%;
+}
+section#showcase ul#results li.category:not(:first-child) {
+    margin-top: 2.5em;
+}
+section#showcase ul#results li.category div:not(li.photo div).info {
+    margin: calc(0.5em - 0.125em);
+    margin-bottom: calc((0.5em - 0.125em) * 2)
+}
+section#showcase ul#results li.category div:not(li.photo div).info h1 {
+    font-size: 1.75em;
+    line-height: calc(1.75em/2);
+    color: #FFB6C1;
+    letter-spacing: calc(1.75em/40);
+    font-family: "Covered By Your Grace", cursive;
+    text-transform: uppercase;
+    margin-bottom: calc(1.75em/8);
+}
+section#showcase ul#results li.category div:not(li.photo div).info span {
+    font-size: 1em;
+    line-height: 1em;
+    text-transform: lowercase;
+    display: block;
+    font-family: "Schoolbell", cursive;
+    color: #FFFFFF;
+    margin-bottom: calc(1em/8);
+}
+section#showcase ul#results li.photo button {
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+section#showcase ul#results li.photo:has(button:hover) {
+    border: 0.125em solid #FFB6C1;
+    transform: scale(1.0125);
+    box-shadow: 0px 0px 2em #de82907e;
+}
+section#showcase ul#results li.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+section#showcase ul#results li.photo div.info {
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2em;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.75))
+}
+section#showcase ul#results li.photo div.info div {
+    width: 100%;
+}
+section#showcase ul#results li.photo div.info div span {
+    font-size: 1em;
+    line-height: 1em;
+    margin-bottom: calc(1em/4);
+    display: block;
+    font-family: "Schoolbell", cursive;
+    color: #FFFFFF;
+    text-transform: lowercase;
+}
+section#showcase ul#results li.photo div.info div h1 {
+    font-size: 2em;
+    line-height: calc(2em/2);
+    color: #FFB6C1;
+    letter-spacing: calc(2em/40);
+    font-family: "Covered By Your Grace", cursive;
+    text-transform: uppercase;
+}
+section#showcase ul#results li.photo div.info img {
+    height: calc((1em + (1em/4) + 2em)/1.25);
+    width: calc((1em + (1em/4) + 2em)/1.25);
+    margin-left: calc(((1em + (1em/4) + 2em)/1.25)/2);
+    aspect-ratio: 1;
+    object-fit: contain;
+    filter: invert(1);
+    margin-top: auto;
+}
+section#showcase ul#results li.photo:has(button:hover) div.info {
+    opacity: 1;
+}
+div#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1em);
+    animation: open 0.25s;
+}
+div#overlay button {
+    position: absolute;
+    top: 2.5em;
+    right: 2.5em;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    cursor: pointer;
+    z-index: 10000;
+}
+div#overlay button img {
+    width: 2.5em;
+    aspect-ratio: 1;
+    object-fit: cover;
+    filter: invert(1)
+}
+div#overlay iframe {
+    width: 75%;
+    height: 75%;
+    max-width: 75%;
+    max-height: 75%;
+    aspect-ratio: 16/9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@keyframes open {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    } 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@media screen and (max-width: 850px) {
+    section#featured {
+        aspect-ratio: 3/4;
+    }
+    section#featured div span {
+        font-size: 0.875em;
+        letter-spacing: calc(0.875em/40);
+    }
+    section#featured div h1 {
+        color: #FFB6C1;
+        font-size: 2em;
+        line-height: calc(2em/2);
+        letter-spacing: calc(2em/40);
+        font-family: "Covered By Your Grace", cursive;
+        font-weight: 600;
+        font-style: normal;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    section#showcase div form {
+        width: calc((100% - 2em) - 0.5em - 1.25em);
+    }
+    section#showcase nav#filter ul {
+        width: calc((100% - 2em) - (1em * 2))
+    }
+    section#showcase ul#results {
+        width: calc(100% - 2em + 0.5em);
+    }
+    section#showcase ul#results li.photo {
+        width: calc(100%/2 - 0.5em);
+        margin: 0.25em;
+        border: 0;
+    }
+    section#showcase ul#results li.photo:has(button:hover) {
+        border: 0;
+        transform: none;
+        box-shadow: none;
+    }
+    section#showcase ul#results li.photo:has(button:hover) div {
+        display: none;
+    }
+    section#showcase ul#results li.category div.scrollable {
+        width: 100%;
+    }
+    section#showcase ul#results li.category div.scrollable ul.photos li.photo {
+        min-width: calc(100%/2.25 - 0.5em)
+    }
+    div#overlay iframe {
+        width: calc(100% - 1em);
+        height: calc(100% - 1em);
+        max-width: calc(100% - 1em);
+        max-height: calc(100% - 1em);
+        aspect-ratio: 16/9;
+    }
+}

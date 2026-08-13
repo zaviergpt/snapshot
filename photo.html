@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./stylesheets/theme.css" type="text/css">
+        <style>
+            html {
+                background-color: transparent;
+            }
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: transparent;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+            img {
+                margin: 2em;
+                max-width: calc(60vw - 4em);
+                max-height: calc(100vh - 4em);
+                border: 0.125em solid #FFB6C1;
+                border-radius: 1em;
+                animation: floating 5s infinite ease-in-out;
+            }
+            div {
+                margin: 2em;
+                width: calc(40% - 4em);
+                text-align: right;
+            }
+            div span#collection {
+                font-size: 1em;
+                line-height: 1em;
+                margin-bottom: calc(1em/4);
+                display: block;
+            }
+            div h1#title {
+                font-size: 2em;
+                line-height: calc(2em/2);
+                color: #FFB6C1;
+                letter-spacing: calc(2em/40);
+                font-family: "Covered By Your Grace", cursive;
+                text-transform: uppercase;
+                margin-bottom: calc(2em/4);
+            }
+            div p {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: calc((1.5em/4) + 2em)
+            }
+            div p#author h2 {
+                font-size: 1.5em;
+                line-height: calc(1.5em/2);
+                color: #FFB6C1;
+                letter-spacing: calc(1.5em/40);
+                font-family: "Covered By Your Grace", cursive;
+                text-transform: uppercase;
+                margin-left: calc(1.5em/4);
+            }
+            table {
+                border-collapse: collapse;
+                margin-left: auto;
+                width: 100%;
+            }
+            table tr th, table tr td {
+                font-size: 1em;
+                padding: 0.5em 0px;
+            }
+            table tr th {
+                font-size: 1.25em;
+                line-height: calc(1.25em/2);
+                color: #FFB6C1;
+                letter-spacing: calc(1.25em/40);
+                font-family: "Covered By Your Grace", cursive;
+                text-transform: uppercase;
+                text-align: left;
+            }
+            table tr td {
+                text-align: right;
+            }
+            @keyframes floating {
+                0% {
+                    transform: scale(1);
+                    box-shadow: 0px 0px 1em #de82907e;
+                } 50% {
+                    transform: scale(1.0125);
+                    box-shadow: 0px 0px 2em #de82907e;
+                } 100% {
+                    transform: scale(1);
+                    box-shadow: 0px 0px 1em #de82907e;
+                }
+            }
+            @media (max-width: 850px) {
+                body {
+                    flex-direction: column;
+                    gap: 2em;
+                }
+                img {
+                    margin: 0px 2em;
+                    max-width: calc(100vw - 4em);
+                    max-height: calc(40vh - 0em);
+                    animation: none;
+                    object-fit: contain;
+                }
+                div {
+                    margin: 0px 2em;
+                    height: calc(40vh - 0em);
+                    width: calc(100% - 4em);
+                    text-align: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <img id="photo">
+        <div>
+            <span id="collection"></span>
+            <h1 id="title"></h1>
+            <p id="author"></p>
+            <table id="specifics"></table>
+        </div>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            if (window.location.search.length > 0) {
+                params = new URLSearchParams(window.location.search);
+                metadata = (await (await fetch("./media/photos/metadata.json")).json())[params.get("id") + ".jpg"]
+                if (window.self != window.top) {
+                    let photo = document.getElementById("photo");
+                    let collection = document.getElementById("collection");
+                    let title = document.getElementById("title");
+                    let author = document.getElementById("author");
+                    let specifics = document.getElementById("specifics");
+                    collection.textContent = `the ${metadata.collection} collection`;
+                    title.textContent = metadata.name;
+                    author.innerHTML = `by <h2>${metadata.author}</h2>`;
+                    photo.src = "./media/photos/" + params.get("id") + ".jpg";
+                    Object.entries(metadata.metadata).forEach((detail) => {
+                        if (["make", "model", "software", "datetime"].includes(detail[0].toLowerCase())) {
+                            detail = [detail, document.createElement("tr")];
+                            detail[1].innerHTML = `<th>${detail[0][0]}</th><td>${detail[0][1]}</td>`
+                            specifics.appendChild(detail[1])
+                        }
+                    })
+                    console.log(metadata)
+                } // https://connect.mozilla.org/t5/ideas/check-if-loaded-inside-iframe-in-javascript/idi-p/5582)
+            }
+        })
+    </script>
+</html>

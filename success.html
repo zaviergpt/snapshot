@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Success - Snapshot</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./stylesheets/theme.css" type="text/css">
+        <script src="./scripts/theme.js" type="text/javascript"></script>
+        <style>
+            section#success {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+            }
+            section#success p {
+                font-size: 1.375em;
+                width: 500px;
+                margin: 0px auto;
+                text-align: center;
+            }
+            section#success p span#firstName {
+                font-family: "Covered By Your Grace", cursive;
+                font-weight: 600;
+                font-style: normal;
+                text-transform: uppercase;
+                letter-spacing: calc(1.375em/30);
+                color: #FFB6C1;
+                font-size: 1.375em;
+                padding: 0px calc(1.375em/(30/4))
+            }
+            section#success a {
+                color: #FFB6C1;
+            }
+            @media (max-width: 850px) {
+                section#success p {
+                    width: calc(100% - 2em);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav id="navigation">
+            <div>
+                <ul>
+                    <li><a href="./home.html">home</a></li>
+                    <li><a href="./showcase.html">showcase</a></li>
+                    <li><a href="./about-us.html">about us</a></li>
+                </ul>
+                <h1 class="logo">snapshot</h1>
+                <button id="navigation-toggle">
+                    <img src="./media/icons/bars-solid-full.svg">
+                </button>
+            </div>
+        </nav>
+        <section id="success">
+            <h1 class="heading">Thank you!</h1>
+            <p>Hey <span id="firstName"></span>! We will contact you via your email (<span id="email"></span>). In the mean time, check out our <a href="./showcase.html">photos</a> and <a href="./about-us.html#events">events list</a>.</p>
+        </section>
+        <footer>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Site links</th>
+                        <th>Others</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="/home.html">Home</a></td>
+                        <td><a href="https://dnrstudios.netlify.app/">dnrstudios</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/showcase.html">Showcase</a></td>
+                        <td><a href="https://zaviergpt.github.io">zaviergpt's GitHub</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/about-us.html">About Us</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/contact-us.html">Contact Us</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </footer>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let params = new URLSearchParams(window.location.search);
+            let elements = document.getElementById("success").querySelectorAll("span");
+            elements.forEach((element) => {
+                element.textContent = params.get(element.id)
+            });
+        })
+    </script>
+</html>
