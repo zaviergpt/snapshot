@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         input.value = params.get("query");
         document.getElementById("search-filter").value = params.has("filter") ? params.get("filter") : "all";
         getResults(input.value, params.has("filter") ? params.get("filter") : "all");
+        window.scrollTo({ top: document.getElementById("featured").getBoundingClientRect().height })
     } else {
         getResults(null, "all");
     }
